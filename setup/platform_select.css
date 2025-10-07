@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    font-size: 70%;
+}
+
+h1 {
+    font-size: 100%;
+    margin-bottom: 62px;
+}
+
+.marginButton {
+    margin-top: 3%;
+}
