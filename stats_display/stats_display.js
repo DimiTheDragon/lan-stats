@@ -4,12 +4,12 @@ const playerCount = getItem("playerCount");
 let rows = 0;
 let lastRow = 0;
 let appendRow = 0;
-let switchToCounter = false;
+let rowZeroed = false;
 
 for (let i = 1; i <= playerCount; i++) {
 
     let diff = i - lastRow;
-    if (i == 1 || diff == rows * 2) {
+    if (i === 1 || diff === rows * 2) {
         rows++;
         lastRow = i;
         const row = document.createElement("div");
@@ -17,13 +17,13 @@ for (let i = 1; i <= playerCount; i++) {
         row.id = `row${rows}`;
         mainContainer.appendChild(row);
         appendRow = rows;
-        switchToCounter = false;
+        rowZeroed = false;
     }
 
     let zeroDiff = i - lastRow;
-    if (i == 2 || zeroDiff == rows) {
+    if (i === 2 || zeroDiff === rows) {
         appendRow = 1;
-        switchToCounter = true;
+        rowZeroed = true;
     }
 
     const currentRowElement = document.getElementById(`row${appendRow}`);
@@ -32,8 +32,9 @@ for (let i = 1; i <= playerCount; i++) {
     statsContainer.id = `statCont${i}`;
     currentRowElement.appendChild(statsContainer);
 
-    if (switchToCounter) {
+    if (rowZeroed) {
         appendRow++;
     }
 
 }
+
