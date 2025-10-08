@@ -1,2 +1,1 @@
-# lan-stats
-A display that can be hooked up to any game API and show statistics from the game per player.
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/dimithedragon)
