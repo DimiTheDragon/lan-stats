@@ -30,6 +30,7 @@ for (let i = 1; i <= playerCount; i++) {
     const statsContainer = document.createElement("div");
     statsContainer.className = "statsContainer";
     statsContainer.id = `statCont${i}`;
+    // here, add the stats in the containers
     currentRowElement.appendChild(statsContainer);
 
     if (rowZeroed) {
