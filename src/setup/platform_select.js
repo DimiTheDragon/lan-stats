@@ -1,10 +1,17 @@
-const steamButt = document.getElementById("steamButt");
-const leagueButt = document.getElementById("leagueButt");
+for (const game of gameList) {
+  const platformButton = document.createElement("button")
+  const span = document.createElement("span")
 
-steamButt.addEventListener("click", () => {
-    setItem("platform", "minecraft");
-});
+  platformButton.id = `${game}Butt`
+  platformButton.className = "marginButton"
+  platformButton.addEventListener("click", () => {
+    setItem("platform", game)
+  })
 
-leagueButt.addEventListener("click", () => {
-    setItem("platform", "factorio");
-});
+  span.className = "button_top"
+  span.textContent = game
+
+  platformButton.appendChild(span)
+  document.body.appendChild(platformButton)
+}
+

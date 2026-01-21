@@ -1,0 +1,1 @@
+const gameList = ['minecraft', 'factorio']
