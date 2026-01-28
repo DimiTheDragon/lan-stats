@@ -1,1 +1,1 @@
-const gameList = ['minecraft', 'factorio']
+const gameList = ['minecraft', 'factorio', 'ark'];

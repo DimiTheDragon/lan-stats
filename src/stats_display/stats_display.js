@@ -1,5 +1,6 @@
 const mainContainer = document.getElementById("mainContainer");
-const playerCount = getItem("playerCount");
+const playerCount = localStorage.getItem("playerCount");
+const platform = localStorage.getItem("platform");
 
 let rows = 0;
 let lastRow = 0;
@@ -31,6 +32,7 @@ for (let i = 1; i <= playerCount; i++) {
     statsContainer.className = "statsContainer";
     statsContainer.id = `statCont${i}`;
     // here, add the stats in the containers
+    
     currentRowElement.appendChild(statsContainer);
 
     if (rowZeroed) {

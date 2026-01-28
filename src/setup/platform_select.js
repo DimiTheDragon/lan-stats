@@ -5,7 +5,8 @@ for (const game of gameList) {
   platformButton.id = `${game}Butt`
   platformButton.className = "marginButton"
   platformButton.addEventListener("click", () => {
-    setItem("platform", game)
+    localStorage.setItem("platform", game)
+    window.location.href = "../stats_display.html"
   })
 
   span.className = "button_top"
