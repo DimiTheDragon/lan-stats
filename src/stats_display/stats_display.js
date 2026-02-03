@@ -3,15 +3,16 @@ import { getItem } from "../global/db_manager.js";
 import { GAME_KEY } from "../global/standard_strings.js";
 
 const mainContainer = document.getElementById("mainContainer");
-const statList = await getStatList(getItem(GAME_KEY));
-const playerCount = statList.length;
+const rawStatList = await getStatList(getItem(GAME_KEY));
+const statList = Object.entries(rawStatList);
+const userCount = statList.length;
 
 let rows = 0;
 let lastRow = 0;
 let appendRow = 0;
 let rowZeroed = false;
 
-for (let i = 1; i <= playerCount; i++) {
+for (let i = 1; i <= userCount; i++) {
 
     let diff = i - lastRow;
     if (i === 1 || diff === rows * 2) {
@@ -35,12 +36,22 @@ for (let i = 1; i <= playerCount; i++) {
     const statsContainer = document.createElement("div");
     statsContainer.className = "statsContainer";
     statsContainer.id = `statCont${i}`;
-    // here, add the stats in the containers
-    for (const stat of Object.values(statList[i - 1])) {
-        const p = document.createElement("p");
-        p.textContent = stat;
-        statsContainer.appendChild(p);
+    
+    // stats go here
+    const currentUsername = statList[i - 1][0];
+    const currentUserStats = statList[i - 1][1];
+
+    const usernameElement = document.createElement("h3");
+    usernameElement.textContent = currentUsername;
+    statsContainer.appendChild(usernameElement);
+
+    for (const stat in currentUserStats) {
+        const statElement = document.createElement("p");
+        statElement.textContent = `${stat}: ${currentUserStats[stat]}`;
+
+        statsContainer.appendChild(statElement);
     }
+
     currentRowElement.appendChild(statsContainer);
 
     if (rowZeroed) {

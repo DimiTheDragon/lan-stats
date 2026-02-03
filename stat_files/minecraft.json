@@ -1,27 +1,27 @@
-[
-    {
-        "username": "dimi",
-        "kills": "10",
-        "blocks placed": "1000"
+{
+    "DimiTheDragon": {
+        "mob kills": "100",
+        "deaths": "10",
+        "blocks placed": "10000"
     },
-    {
-        "username": "user2",
-        "kills": "10",
-        "blocks placed": "1000"
+    "PotatoMan": {
+        "mob kills": "100",
+        "deaths": "10",
+        "blocks placed": "10000"
     },
-    {
-        "username": "user3",
-        "kills": "10",
-        "blocks placed": "1000"
+    "SwordGuy": {
+        "mob kills": "100",
+        "deaths": "10",
+        "blocks placed": "10000"
     },
-    {
-        "username": "user4",
-        "kills": "10",
-        "blocks placed": "1000"
+    "Copper": {
+        "mob kills": "100",
+        "deaths": "10",
+        "blocks placed": "10000"
     },
-    {
-        "username": "user5",
-        "kills": "10",
-        "blocks placed": "1000"
+    "MerlinTheWizard": {
+        "mob kills": "100",
+        "deaths": "10",
+        "blocks placed": "10000"
     }
-]
+}
