@@ -1,6 +1,10 @@
+import { getStatList } from "../global/api_comms.js";
+import { getItem } from "../global/db_manager.js";
+import { GAME_KEY } from "../global/standard_strings.js";
+
 const mainContainer = document.getElementById("mainContainer");
-const playerCount = localStorage.getItem("playerCount");
-const platform = localStorage.getItem("platform");
+const statList = await getStatList(getItem(GAME_KEY));
+const playerCount = statList.length;
 
 let rows = 0;
 let lastRow = 0;
@@ -32,7 +36,11 @@ for (let i = 1; i <= playerCount; i++) {
     statsContainer.className = "statsContainer";
     statsContainer.id = `statCont${i}`;
     // here, add the stats in the containers
-    
+    for (const stat of Object.values(statList[i - 1])) {
+        const p = document.createElement("p");
+        p.textContent = stat;
+        statsContainer.appendChild(p);
+    }
     currentRowElement.appendChild(statsContainer);
 
     if (rowZeroed) {
@@ -40,4 +48,3 @@ for (let i = 1; i <= playerCount; i++) {
     }
 
 }
-

@@ -9,3 +9,8 @@ export function createStatFile(name) {
   console.info("File created");
 }
 
+export async function getStatList(name) {
+  const response = await fetch(`/stat_files/${name}.json`);
+  const statList = await response.json();
+  return statList;
+}
